@@ -82,19 +82,13 @@ async function main() {
         console.log(`Missing resources (${missingResources.join(', ')}). Mounting DMG...`);
 
         let mounted = false;
-        if (!fs.existsSync(MOUNT_POINT)) {
-            // Check if already mounted by user?
-            try {
-                // Try to mount
-                run(`hdiutil attach "${DMG_PATH}" -nobrowse -mountpoint "${MOUNT_POINT}"`);
-                mounted = true;
-            } catch (e) {
-                console.log("Mount failed or already mounted. Checking...");
-            }
-        } else {
-            console.log("Mount point exists, assuming mounted.");
+        // Check if already mounted by user?
+        try {
+            // Try to mount
+            run(`hdiutil attach "${DMG_PATH}" -nobrowse -mountpoint "${MOUNT_POINT}"`);
             mounted = true;
-            // If strictly it's just a folder, we might fail, but let's assume valid mount or previous run leftover
+        } catch (e) {
+            console.log("Mount failed or already mounted. Checking...");
         }
 
         try {
