@@ -21,63 +21,42 @@ The core automation lives in [`schedule.yml`](.github/workflows/schedule.yml), a
 - A Homebrew install and upgrade path for Intel Macs
 - Automated daily checks for new upstream Codex releases
 
-## Local Tap Usage
+## Tap Usage
 
-If you want to use this repository directly from a local clone as a custom Homebrew tap:
-
-```bash
-git clone git@github.com:soham2008xyz/codex-intel.git
-cd codex-intel
-
-brew tap local/codex-intel "$PWD"
-brew install --cask local/codex-intel/codex-intel
-```
-
-Notes:
-
-- `local/codex-intel` is just an example tap name. Any valid tap name works when pointing at your local checkout.
-- The cask installs `Codex.app`.
-- The cask conflicts with the official `codex` cask, so uninstall that first if needed.
-
-## Upgrade, Reinstall, and Remove
-
-Upgrade to the latest converted release:
-
-```bash
-brew upgrade --cask local/codex-intel/codex-intel
-```
-
-Reinstall the current cask:
-
-```bash
-brew reinstall --cask local/codex-intel/codex-intel
-```
-
-Remove the app:
-
-```bash
-brew uninstall --cask local/codex-intel/codex-intel
-```
-
-Remove the local tap when you no longer need it:
-
-```bash
-brew untap local/codex-intel
-```
-
-## Remote Tap Usage
-
-If you want to install from GitHub instead of a local checkout:
+Install the tap and the cask from GitHub:
 
 ```bash
 brew tap soham2008xyz/codex-intel
 brew install --cask codex-intel
 ```
 
-Then update it later with:
+Notes:
+
+- The cask installs `Codex.app`.
+- The cask conflicts with the official `codex` cask, so uninstall that first if needed.
+
+Upgrade to the latest converted release:
 
 ```bash
 brew upgrade --cask codex-intel
+```
+
+Reinstall the current cask:
+
+```bash
+brew reinstall --cask codex-intel
+```
+
+Remove the app:
+
+```bash
+brew uninstall --cask codex-intel
+```
+
+Remove the tap when you no longer need it:
+
+```bash
+brew untap soham2008xyz/codex-intel
 ```
 
 ## How The Automation Works
