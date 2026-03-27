@@ -1,6 +1,6 @@
 # Codex Intel Homebrew Tap
 
-[![Daily Build Codex App (Intel)](https://github.com/soham2008xyz/codex-intel/actions/workflows/schedule.yml/badge.svg)](https://github.com/soham2008xyz/codex-intel/actions/workflows/schedule.yml)
+[![Scheduled Build Codex App (Intel)](https://github.com/soham2008xyz/codex-intel/actions/workflows/schedule.yml/badge.svg)](https://github.com/soham2008xyz/codex-intel/actions/workflows/schedule.yml)
 [![Test Homebrew Cask](https://github.com/soham2008xyz/codex-intel/actions/workflows/test.yml/badge.svg)](https://github.com/soham2008xyz/codex-intel/actions/workflows/test.yml)
 
 This repository ships an unofficial Homebrew cask tap for installing Codex on Intel Macs.
@@ -19,7 +19,7 @@ The core automation lives in [`schedule.yml`](.github/workflows/schedule.yml), a
 - A custom cask token: `codex-intel`
 - An Intel-compatible `Codex.app` packaged as a GitHub release asset
 - A Homebrew install and upgrade path for Intel Macs
-- Automated daily checks for new upstream Codex releases
+- Automated checks every 6 hours for new upstream Codex releases
 
 ## Tap Usage
 
@@ -61,7 +61,7 @@ brew untap soham2008xyz/codex-intel
 
 ## How The Automation Works
 
-[`schedule.yml`](.github/workflows/schedule.yml) runs daily at 00:00 UTC and also supports manual dispatch. The workflow:
+[`schedule.yml`](.github/workflows/schedule.yml) runs every 6 hours and also supports manual dispatch. The workflow:
 
 - downloads the latest upstream `Codex.dmg`
 - extracts the app version from `Info.plist`
