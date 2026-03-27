@@ -14,14 +14,14 @@ permissions:
 jobs:
   test-cask:
     name: Test Homebrew Cask
-    runs-on: macos-latest
+    runs-on: macos-15-intel
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@v4.0.0
+        uses: Homebrew/actions/setup-homebrew@v4
 
       - name: Run Cask tests
         run: bash scripts/test_cask.sh
